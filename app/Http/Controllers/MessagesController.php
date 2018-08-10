@@ -13,9 +13,9 @@ class MessagesController extends Controller
      */
     public function index()
     {
-        $message = Message::all();
+        $messages = Message::all();
         
-        return view('messages.index', ['test' => $messages]);
+        return view('messages.index', ['tests' => $messages]);
     }
 
     /**
@@ -40,6 +40,10 @@ class MessagesController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'content' => 'required|max:191',
+        ]);
+        
         $message = new Message;
         $message->content = $request->content;
         $message->save();
