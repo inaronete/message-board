@@ -49,6 +49,10 @@ class MessagesController extends Controller
         $message->save();
         
         return redirect('/');
+        
+    
+    
+    
     }
 
     /**
