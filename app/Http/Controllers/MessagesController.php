@@ -15,7 +15,7 @@ class MessagesController extends Controller
     {
         $messages = Message::all();
         
-        return view('messages.index', ['tests' => $messages]);
+        return view('messages.index', ['messages' => $messages,]);
     }
 
     /**
